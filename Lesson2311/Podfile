@@ -1,0 +1,19 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'Lesson2311' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Lesson2311
+
+  target 'Lesson2311Tests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'Lesson2311UITests' do
+    # Pods for testing
+  end
+
+end
