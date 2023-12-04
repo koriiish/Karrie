@@ -23,14 +23,33 @@ enum Book: String{
             return "The Great Gatsby is told from the perspective of Fitzgerald, the probable writer Nick Carraway, who in the spring of 1922, in an era of decaying morality, brilliant jazz and the “kings of bootleg alcohol,” comes from the Midwest to New York.."
         case .FlowersForAlgernon:
             return "This is the story of 37-year-old janitor Charlie, who agrees to take part in an experiment to increase mental abilities. Suddenly, Charlie's IQ increases significantly, he learns to read and write and begins to express his thoughts more and more coherently and elegantly."
-            
         }
     }
 }
+
 //6.Создайте перечисление Clothes. Напишите функцию, которая принимает Clothes в качестве параметра и выводит сообщение о выбранной одежде.
-enum Clothes: String{
-    case tshirt
-    case pants
-    case jacket
-    case skirt
+enum Clothes {
+    enum top {
+        case jacket
+        case tshirt
+        case longsleeve
+        case sweater
+    }
+    enum bottom {
+        case pants
+        case skirt
+        case shorts
+        case jeans
+    }
+    case topClothe(clotheType: top)
+    case bottomClothe(clotheType: bottom)
+    
+    func getClothesType() -> String{
+        switch self {
+        case let .topClothe(clotheType):
+            return "I will wear \(clotheType)"
+        case let .bottomClothe(clotheType):
+            return "I will wear \(clotheType)"
+        }
+    }
 }

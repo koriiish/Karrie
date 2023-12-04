@@ -20,12 +20,20 @@ class ViewController: UIViewController {
         print(description.description)
         
        //6.Создайте перечисление Clothes. Напишите функцию, которая принимает Clothes в качестве параметра и выводит сообщение о выбранной одежде.
-        func choosedClothes (x: Clothes, y: Clothes){
+/*      func choosedClothes (x: Clothes, y: Clothes){
             print("I will wear \(x) and \(y)")
         }
        
         choosedClothes(x: .skirt, y: .jacket)
+        */
         
+        //как с примера с телефоном
+        
+        let topClothes = Clothes.top.jacket
+        let bottomClothes = Clothes.bottom.skirt
+        let wearTopClothes = Clothes.topClothe(clotheType: topClothes)
+        let wearBottomClothes = Clothes.bottomClothe(clotheType: bottomClothes)
+        print (wearTopClothes.getClothesType(), "and", wearBottomClothes.getClothesType())
     }
     
 
