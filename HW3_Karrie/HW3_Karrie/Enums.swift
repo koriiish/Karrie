@@ -13,7 +13,7 @@ enum Book: String{
     case TheGreatGatsby
     case FlowersForAlgernon
     
-    var description: String{
+    func description() -> String {
         switch self {
         case .OneThousandNineHundredEightyFour:
             return "A kind of antipode to the second great dystopia of the 20th century - Brave New World by Aldous Huxley. What, in essence, is more terrible: a consumer society taken to the point of absurdity, or a society of ideas taken to the absolute? According to Orwell, there is and cannot be anything more terrible than total unfreedom..."
