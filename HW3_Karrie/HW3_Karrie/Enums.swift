@@ -13,7 +13,7 @@ enum Book: String{
     case TheGreatGatsby
     case FlowersForAlgernon
     
-    var description: String{
+    func description() -> String {
         switch self {
         case .OneThousandNineHundredEightyFour:
             return "A kind of antipode to the second great dystopia of the 20th century - Brave New World by Aldous Huxley. What, in essence, is more terrible: a consumer society taken to the point of absurdity, or a society of ideas taken to the absolute? According to Orwell, there is and cannot be anything more terrible than total unfreedom..."
@@ -28,9 +28,28 @@ enum Book: String{
     }
 }
 //6.Создайте перечисление Clothes. Напишите функцию, которая принимает Clothes в качестве параметра и выводит сообщение о выбранной одежде.
-enum Clothes: String{
-    case tshirt
-    case pants
-    case jacket
-    case skirt
+enum Clothes {
+    enum top {
+        case jacket
+        case tshirt
+        case longsleeve
+        case sweater
+    }
+    enum bottom {
+        case pants
+        case skirt
+        case shorts
+        case jeans
+    }
+    case topClothe(clotheType: top)
+    case bottomClothe(clotheType: bottom)
+
+    func getClothesType() -> String{
+        switch self {
+        case let .topClothe(clotheType):
+            return "I will wear \(clotheType)"
+        case let .bottomClothe(clotheType):
+            return "I will wear \(clotheType)"
+        }
+    }
 }
