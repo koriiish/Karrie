@@ -172,10 +172,10 @@ class ViewController: UIViewController {
 //        
 //        print(val)
 //        
-//        let optionalNumbers: [Int?] = [1, nil, 3, nil, 5]
-//        let unwrappedNumbers = optionalNumbers.map { $0.map { $0 * 2 } }
-//        print(unwrappedNumbers)
-//        
+        let optionalNumbers: [Int?] = [1, nil, 3, nil, 5]
+        let unwrappedNumbers = optionalNumbers.map { $0.map { $0 * 2 } }
+        print(unwrappedNumbers)
+//
 //        // Filter
 //        
 //        let num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -242,13 +242,13 @@ class ViewController: UIViewController {
             }
         }
                 
-//        optionalNumbers.forEach { number in
-//            if let num = number {
-//                print("Value is \(num)")
-//            } else {
-//                print("Value is nil")
-//        }
-//    }
+        optionalNumbers.forEach { number in
+            if let num = number {
+                print("Value is \(num)")
+            } else {
+                print("Value is nil")
+        }
+    }
                 
 //            var total = 0
 //            [10, 20, 30, 40, 50].forEach {
