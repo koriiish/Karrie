@@ -20,9 +20,9 @@ protocol StringArrayDelegate: AnyObject {
 }
 class ViewController: UIViewController {
     
-    //weak var delegate: StringDelegate?
+    weak var delegate: StringDelegate?
    // weak var delegate: ArrayDelegate?
-    weak var delegate: StringArrayDelegate?
+  //  weak var delegate: StringArrayDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,18 +42,18 @@ class ViewController: UIViewController {
             present(navController, animated: true, completion: nil)
         }
     }
-   // func sendString() { // вне вью дид лоуда
-//        let message = "Send message to other screen"
-//        delegate?.recieveString(text: message)
-//    }
+    func sendString() { // вне вью дид лоуда
+        let message = "Send message to other screen"
+        delegate?.recieveString(text: message)
+    }
 //    func sendArray() {
 //        let array = [1, 3, 2, 8, 4]
 //       // let sortedArray = array.sorted()
 //        delegate?.recieveArray(array: array.sorted())// так можно но лучше создать переменную и в ней сортировать
 //    }
-    func sendStringArray() {
-        let stringArray = ["Victor", "Maria", "Olivia"]
-        let uppercasedArray = stringArray.description.uppercased()
-        delegate?.recieveStringArray(array: [uppercasedArray])
-    }
+//    func sendStringArray() {
+//        let stringArray = ["Victor", "Maria", "Olivia"]
+//        let uppercasedArray = stringArray.description.uppercased()
+//        delegate?.recieveStringArray(array: [uppercasedArray])
+//    }
 }

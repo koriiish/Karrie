@@ -27,9 +27,9 @@ class SecondViewController: UIViewController {
        // let second = SecondViewController()
         first.delegate = self
         
-      //  first.sendString()
+       first.sendString()
        // first.sendArray()
-        first.sendStringArray()
+      //  first.sendStringArray()
     }
     
     @objc func goBack() {
