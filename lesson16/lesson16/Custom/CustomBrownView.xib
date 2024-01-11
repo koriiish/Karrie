@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CustomBrownView" customModule="lesson16" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="200"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hlC-2E-cal">
+                    <rect key="frame" x="0.0" y="0.0" width="400" height="200"/>
+                    <color key="backgroundColor" systemColor="systemBrownColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="400" id="8ud-kM-bWp"/>
+                        <constraint firstAttribute="height" constant="200" id="L5b-YG-AwW"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="hlC-2E-cal" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="5OX-0e-NUV"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="hlC-2E-cal" secondAttribute="bottom" constant="-34" id="LJm-2Y-8sk"/>
+                <constraint firstItem="hlC-2E-cal" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="mXu-Xm-Up5"/>
+                <constraint firstItem="hlC-2E-cal" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="oiB-Bk-0qR"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="browmView" destination="hlC-2E-cal" id="gTQ-Ss-7Do"/>
+            </connections>
+            <point key="canvasLocation" x="109.9236641221374" y="81.690140845070431"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
