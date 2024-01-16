@@ -10,8 +10,15 @@ import Lottie
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var circleView: CircleView!
     
+    @IBOutlet weak var widthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
     let animatedView = UIView()
     let animatedLayer = CALayer()
     let shapeLayer = CAShapeLayer()
@@ -20,13 +27,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let customAlert = CustomAlertView(frame: CGRect(x: 0, y: 0, width: 300, height: 200))
-        customAlert.setTitle("Это заголовок алерта")
-        customAlert.setCancelButtonTitle("Отмена")
-        customAlert.setConfirmButtonTitle("Подтвердить")
-
-        view.addSubview(customAlert)
-        customAlert.center = view.center
+//        let customAlert = CustomAlertView(frame: CGRect(x: 0, y: 0, width: 300, height: 200))
+//        customAlert.setTitle("Это заголовок алерта")
+//        customAlert.setCancelButtonTitle("Отмена")
+//        customAlert.setConfirmButtonTitle("Подтвердить")
+//
+//        view.addSubview(customAlert)
+//        customAlert.center = view.center
         circleView.isHidden = true
         
 //        if let circleView = Bundle.main.loadNibNamed("CircleView", owner: self, options: nil)?.first as? CircleView {
@@ -36,6 +43,12 @@ class ViewController: UIViewController {
 //            view.addSubview(circleView)
 //            self.circleView = circleView
 //        }
+   //     animatedCustomView()
+      //  animationWithLayer()
+      //  animationWithShapeLayer()
+     //   animationWithGradientLayer()
+    //    animateWithLottie()
+     //   animateConstraints()
     }
     
     func animatedCustomView() {
@@ -43,13 +56,13 @@ class ViewController: UIViewController {
         animatedView.backgroundColor = UIColor.blue
         view.addSubview(animatedView)
 
-        UIView.animate(withDuration: 2.0) {
-            self.animatedView.center = CGPoint(x: self.view.center.x, y: 300)
-        }
+//        UIView.animate(withDuration: 2.0) {
+//            self.animatedView.center = CGPoint(x: self.view.center.x, y: 400)
+//        }
         
         // change scale
 //        UIView.animate(withDuration: 2.0) {
-//            self.animatedView.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+//            self.animatedView.transform = CGAffineTransform(scaleX: 0.5, y: 1.5)
 //        }
         
         // rotation
@@ -90,7 +103,7 @@ class ViewController: UIViewController {
         // spring animation
 //        UIView.animate(withDuration: 1.5,
 //                       delay: 0.0,
-//                       usingSpringWithDamping: 0.5,
+//                       usingSpringWithDamping: 0.5, //значение на сколько пружинить
 //                       initialSpringVelocity: 0.0,
 //                       options: [],
 //                       animations: {
@@ -116,10 +129,10 @@ class ViewController: UIViewController {
 //        }
         
         // change animation with transition
-        
+//        
 //        let transition = CATransition()
 //        transition.duration = 1.0
-//        transition.type = CATransitionType.fade
+//        transition.type = CATransitionType.moveIn //появление его тип(сбоку)
 //        animatedView.layer.add(transition, forKey: "transitionAnimation")
 //
 //        animatedView.backgroundColor = UIColor.blue
@@ -130,7 +143,7 @@ class ViewController: UIViewController {
 //            NSValue(cgPoint: animatedView.center),
 //            NSValue(cgPoint: CGPoint(x: 150, y: 200)),
 //            NSValue(cgPoint: CGPoint(x: 250, y: 100)),
-//            NSValue(cgPoint: animatedView.center)
+//            NSValue(cgPoint: view.center)
 //        ]
 //        keyframeAnimation.keyTimes = [0.0, 0.33, 0.66, 1.0]
 //        keyframeAnimation.timingFunctions = [
@@ -194,7 +207,7 @@ class ViewController: UIViewController {
         view.addSubview(lottieAnimationView)
         
  
-        if let animation = LottieAnimation.named("Animation4") {
+        if let animation = LottieAnimation.named("Animation1") {
             lottieAnimationView.animation = animation
             lottieAnimationView.loopMode = .loop 
             lottieAnimationView.play()
@@ -206,7 +219,8 @@ class ViewController: UIViewController {
         let newTop: CGFloat = 100
         
         UIView.animate(withDuration: 0.5) {
-            
+            self.leadingConstraint.constant = newLeading
+            self.bottomConstraint.constant = newTop
             
             self.view.layoutIfNeeded()
         }
