@@ -12,11 +12,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var labelEmailText: UILabel!
     @IBOutlet weak var labelText: UILabel!
+    var blurView = UIVisualEffectView()
     override func viewDidLoad() {
         super.viewDidLoad()
         textField.delegate = self
         textField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
-        
+        addBlurView()
        // phoneAttributedText()
       //  emailAttributedText()
     }
@@ -74,7 +75,7 @@ class ViewController: UIViewController {
         let phoneAttributedString = NSMutableAttributedString(string: phoneText)
         let phoneAttributed: [NSAttributedString.Key: Any] = [
             .font: UIFont(name: "Papyrus", size: 21)!,
-            .foregroundColor: UIColor.blue
+            .foregroundColor: UIColor.red
         ]
         
         //  let phoneNumberPattern = "\\b[\\d]{3}\\-[\\d]{3}\\-[\\d]{4}\\b"
@@ -85,12 +86,30 @@ class ViewController: UIViewController {
             for match in matches {
                 let range = match.range
                 phoneAttributedString.addAttributes(phoneAttributed, range: range)
+                blurView.isHidden = false
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1){ [self] in
+                    self.textField.text = ""
+                    blurView.isHidden = true
+                    
+                }
             }
         } catch {
             print("Error")
         }
         textField.attributedText = phoneAttributedString
     }
+    func addBlurView() {
+            let blurEffect = UIBlurEffect(style: .regular)
+            blurView = UIVisualEffectView(effect: blurEffect)
+        blurView.frame = textField.frame
+            blurView.alpha = 0.8
+            
+         //   blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            blurView.backgroundColor = .red
+            blurView.isHidden = true
+            
+            view.addSubview(blurView)
+        }
     
 }
 
