@@ -26,18 +26,46 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shy-WS-8cF">
+                                <rect key="frame" x="16" y="473.66666666666669" width="361" height="20.333333333333314"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="361" id="F4d-i5-Ehj"/>
+                                    <constraint firstAttribute="height" constant="20.329999999999998" id="wCi-Tc-HvN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K77-fW-Qsr">
+                                <rect key="frame" x="16" y="655" width="361" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="361" id="AlZ-6Q-y5d"/>
+                                    <constraint firstAttribute="height" constant="34" id="gWM-PQ-rvW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="shy-WS-8cF" firstAttribute="top" secondItem="qeB-1X-NmE" secondAttribute="bottom" constant="229.66999999999999" id="1wy-3U-MES"/>
                             <constraint firstItem="qeB-1X-NmE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="4rX-Jw-SXH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qeB-1X-NmE" secondAttribute="trailing" constant="16" id="HyU-Ki-FpB"/>
                             <constraint firstItem="qeB-1X-NmE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="103" id="Ifh-uc-zAd"/>
+                            <constraint firstItem="shy-WS-8cF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Udw-v0-XsK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="K77-fW-Qsr" secondAttribute="trailing" constant="16" id="VqD-nJ-O5P"/>
+                            <constraint firstItem="K77-fW-Qsr" firstAttribute="top" secondItem="shy-WS-8cF" secondAttribute="bottom" constant="161" id="baH-1u-bNy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="K77-fW-Qsr" secondAttribute="bottom" constant="129" id="cjw-oO-1O4"/>
+                            <constraint firstItem="K77-fW-Qsr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="s2C-kM-vvG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="shy-WS-8cF" secondAttribute="trailing" constant="16" id="vnd-Ok-3Lh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qeB-1X-NmE" secondAttribute="bottom" constant="574" id="xgY-wT-Fw0"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="labelEmailText" destination="shy-WS-8cF" id="gbs-3j-Fq1"/>
                         <outlet property="labelText" destination="qeB-1X-NmE" id="k79-FP-ZmY"/>
+                        <outlet property="textField" destination="K77-fW-Qsr" id="i4v-u3-e0M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
