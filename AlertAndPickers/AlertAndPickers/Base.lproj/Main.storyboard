@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AlertAndPickers" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="580-fm-238">
+                                <rect key="frame" x="16" y="179" width="361" height="34"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mdb-lp-YFe">
+                                <rect key="frame" x="16" y="253" width="361" height="193"/>
+                            </imageView>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="NKf-yJ-Ipp">
+                                <rect key="frame" x="0.0" y="466" width="393" height="297"/>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mYf-i2-hwO">
+                                <rect key="frame" x="16" y="79" width="361" height="60"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="qhl-Ns-cOi"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button">
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="pickPhotoButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rmd-9C-ctU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mdb-lp-YFe" firstAttribute="top" secondItem="580-fm-238" secondAttribute="bottom" constant="40" id="1ce-MX-vJD"/>
+                            <constraint firstItem="mdb-lp-YFe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="3KB-hh-rbh"/>
+                            <constraint firstItem="580-fm-238" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="120" id="9Wp-VL-Mco"/>
+                            <constraint firstItem="NKf-yJ-Ipp" firstAttribute="top" secondItem="mdb-lp-YFe" secondAttribute="bottom" constant="20" id="D2N-J4-nsg"/>
+                            <constraint firstItem="mYf-i2-hwO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="Exb-1H-JYp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="580-fm-238" secondAttribute="trailing" constant="16" id="FUq-hD-NKW"/>
+                            <constraint firstItem="mYf-i2-hwO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="LTy-3n-TJC"/>
+                            <constraint firstItem="580-fm-238" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Ljh-yZ-RJg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mdb-lp-YFe" secondAttribute="trailing" constant="16" id="Qqh-r8-dxv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NKf-yJ-Ipp" secondAttribute="bottom" constant="55" id="RP9-tb-Tce"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mdb-lp-YFe" secondAttribute="bottom" constant="372" id="Yvy-U8-dHD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mYf-i2-hwO" secondAttribute="trailing" constant="16" id="oww-2g-nbi"/>
+                            <constraint firstItem="NKf-yJ-Ipp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vcT-bk-N9l"/>
+                            <constraint firstItem="NKf-yJ-Ipp" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="xpW-xv-hFV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buttonLocalize" destination="mYf-i2-hwO" id="cal-qj-egd"/>
+                        <outlet property="datePicker" destination="NKf-yJ-Ipp" id="aBk-aC-j54"/>
+                        <outlet property="imageView" destination="mdb-lp-YFe" id="Ehp-Kh-upK"/>
+                        <outlet property="textField" destination="580-fm-238" id="kXi-Rc-AZd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="57.251908396946561" y="-2.1126760563380285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

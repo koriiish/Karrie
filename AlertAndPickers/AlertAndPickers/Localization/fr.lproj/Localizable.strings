@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  localizable
+
+*/
+
+"example" = "Bonjour";
+
+"buttonTitle" = "France";
