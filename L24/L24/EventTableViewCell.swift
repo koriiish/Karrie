@@ -1,43 +1,42 @@
 //
 //  EventTableViewCell.swift
-//  lesson24project
+//  L24
 //
-//  Created by Карина Дьячина on 15.02.24.
+//  Created by Наталья Мазур on 15.02.24.
 //
 
 import UIKit
 
 class EventTableViewCell: UITableViewCell {
     
-    
     lazy var titleLabel: UILabel = {
-        titleLabel = UILabel()
+        let titleLabel = UILabel()
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         return titleLabel
     }()
     
     lazy var descriptionLabel: UILabel = {
-        descriptionLabel = UILabel()
+        let descriptionLabel = UILabel()
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         return descriptionLabel
     }()
     
     lazy var dateLabel: UILabel = {
-        dateLabel = UILabel()
+        let dateLabel = UILabel()
         dateLabel.translatesAutoresizingMaskIntoConstraints = false
         return dateLabel
     }()
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setupLabel()
+    }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setupLabels()
-    }
-    
-    func setupLabels() {
+    func setupLabel() {
         //        addSubview(titleLabel)
         //        addSubview(descriptionLabel)
         addSubview(dateLabel)
@@ -50,19 +49,6 @@ class EventTableViewCell: UITableViewCell {
     
     func configure(timezone: Timezone) {
         dateLabel.text = "\(timezone.name) - \(timezone.abbr)"
-        
     }
     
-//    func getTimeZone(){
-//        let knownTimeZoneIdentifiers = TimeZone.knownTimeZoneIdentifiers
-//        for timeZones in TimeZone.knownTimeZoneIdentifiers {
-//            let timeZone = TimeZone(identifier: timeZones)
-//            if let abbreviation = timeZone?.abbreviation(), let seconds = timeZone?.secondsFromGMT() {
-//                print ("timeZone: \(timeZones) \nabbreviation: \(abbreviation)\nsecondsFromGMT: \(seconds)\n")
-//                timezoneArray.append(Timezone(name: timeZones, abbr: abbreviation))
-//            }
-//        }
-//        
-//    }
 }
-

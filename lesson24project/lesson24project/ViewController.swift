@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         return tableView
     }()
     
-    var timezoneArray: Array<String> = []
+    var timeZonesArray: Array<Timezone> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +52,7 @@ class ViewController: UIViewController {
             let timeZone = TimeZone(identifier: timeZones)
             if let abbreviation = timeZone?.abbreviation(), let seconds = timeZone?.secondsFromGMT() {
                 print ("timeZone: \(timeZones) \nabbreviation: \(abbreviation)\nsecondsFromGMT: \(seconds)\n")
-                timezoneArray.append(Timezone(name: timeZones, abbr: abbreviation))
+                timeZonesArray.append(Timezone(name: timeZones, abbr: abbreviation))
             }
         }
         
@@ -60,20 +60,23 @@ class ViewController: UIViewController {
     
     @objc func addButtonTapped() {
         let newTimezone = Timezone(name: "Minsk", abbr: "GMT+3")
-        timezoneArray.append(newTimezone)
+        timeZonesArray.append(newTimezone)
         tableView.reloadData()
     }
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return timezoneArray.count
+        return timeZonesArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "EventTableViewCell", for: indexPath) as! EventTableViewCell
-        cell.configure(timezone: timezoneArray[indexPath.row])
+        cell.configure(timezone: timeZonesArray[indexPath.row])
         return cell
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
     }
     
     
