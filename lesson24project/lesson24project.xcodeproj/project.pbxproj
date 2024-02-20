@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A7B847A22B851C28000245DC /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B847A12B851C28000245DC /* EventView.swift */; };
 		A7EEE2B82B7E8366004C0E48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EEE2B72B7E8366004C0E48 /* AppDelegate.swift */; };
 		A7EEE2BA2B7E8366004C0E48 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EEE2B92B7E8366004C0E48 /* SceneDelegate.swift */; };
 		A7EEE2BC2B7E8366004C0E48 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EEE2BB2B7E8366004C0E48 /* ViewController.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A7B847A12B851C28000245DC /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
 		A7EEE2B42B7E8366004C0E48 /* lesson24project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lesson24project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7EEE2B72B7E8366004C0E48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7EEE2B92B7E8366004C0E48 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 		A7EEE2AB2B7E8366004C0E48 = {
 			isa = PBXGroup;
 			children = (
+				A7B847A12B851C28000245DC /* EventView.swift */,
 				A7EEE2EB2B7E935F004C0E48 /* Timezone.swift */,
 				A7EEE2B62B7E8366004C0E48 /* lesson24project */,
 				A7EEE2CD2B7E8367004C0E48 /* lesson24projectTests */,
@@ -268,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7EEE2EC2B7E935F004C0E48 /* Timezone.swift in Sources */,
+				A7B847A22B851C28000245DC /* EventView.swift in Sources */,
 				A7EEE2E82B7E837F004C0E48 /* Event.swift in Sources */,
 				A7EEE2BC2B7E8366004C0E48 /* ViewController.swift in Sources */,
 				A7EEE2B82B7E8366004C0E48 /* AppDelegate.swift in Sources */,

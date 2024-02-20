@@ -38,31 +38,27 @@ class EventTableViewCell: UITableViewCell {
     }
     
     func setupLabels() {
-        //        addSubview(titleLabel)
-        //        addSubview(descriptionLabel)
+        addSubview(titleLabel)
+        addSubview(descriptionLabel)
         addSubview(dateLabel)
         
         NSLayoutConstraint.activate([
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 5),
+       
+            descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
+        
             dateLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
             dateLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
     }
     
-    func configure(timezone: Timezone) {
-        dateLabel.text = "\(timezone.name) - \(timezone.abbr)"
-        
+    func configure(event: Event) {
+        titleLabel.text = event.title
+        descriptionLabel.text = event.description
+        dateLabel.text = event.date
     }
     
-//    func getTimeZone(){
-//        let knownTimeZoneIdentifiers = TimeZone.knownTimeZoneIdentifiers
-//        for timeZones in TimeZone.knownTimeZoneIdentifiers {
-//            let timeZone = TimeZone(identifier: timeZones)
-//            if let abbreviation = timeZone?.abbreviation(), let seconds = timeZone?.secondsFromGMT() {
-//                print ("timeZone: \(timeZones) \nabbreviation: \(abbreviation)\nsecondsFromGMT: \(seconds)\n")
-//                timezoneArray.append(Timezone(name: timeZones, abbr: abbreviation))
-//            }
-//        }
-//        
-//    }
 }
 
