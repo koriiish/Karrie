@@ -35,6 +35,7 @@ class EventTableViewCell: UITableViewCell {
         return dateLabel
     }()
     
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
@@ -68,4 +69,3 @@ class EventTableViewCell: UITableViewCell {
     }
     
 }
-

@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol EventDelegate: AnyObject {
+    func sendEvent(event: Event)
+}
+
 class EventView: UIView {
     
     enum Constants {
@@ -69,9 +73,22 @@ class EventView: UIView {
         return button
     }()
     
+    var currentDate = Date()
+    
+    lazy var datePicker: UIDatePicker = {
+        datePicker = UIDatePicker()
+        datePicker.translatesAutoresizingMaskIntoConstraints = false
+        datePicker.preferredDatePickerStyle = .inline
+        datePicker.minimumDate = currentDate
+        return datePicker
+    }()
+    
+    weak var delegate: EventDelegate?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupConstraints()
+        datePickerSettings()
     }
     
     required init?(coder: NSCoder) {
@@ -111,5 +128,35 @@ class EventView: UIView {
             addButton.widthAnchor.constraint(equalToConstant: Constants.buttonsWidth),
             addButton.heightAnchor.constraint(equalToConstant: Constants.buttonsHeight)
         ])
+        
+        addButton.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
+    }
+    
+    func datePickerSettings() {
+        dateTextField.inputView = datePicker
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+               
+        let doneButton = UIBarButtonItem(title: "Готово", style: .plain, target: self, action: #selector(doneButtonTapped))
+        toolbar.setItems([doneButton], animated: false)
+        
+        dateTextField.inputAccessoryView = toolbar
+        
+        datePicker.addTarget(self, action: #selector(onDatePickerValueChanged), for: .valueChanged)
+    }
+    
+    @objc func addButtonTapped() {
+       let newEvent = Event(title: titleTextField.text ?? "", description: descriptionTextView.text , date: dateTextField.text ?? "")
+        delegate?.sendEvent(event: newEvent)
+    }
+    
+    @objc func doneButtonTapped() {
+        dateTextField.resignFirstResponder()
+    }
+    
+    @objc func onDatePickerValueChanged(_ datePicker: UIDatePicker) {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/d"
+        dateTextField.text = formatter.string(from: datePicker.date)
     }
 }

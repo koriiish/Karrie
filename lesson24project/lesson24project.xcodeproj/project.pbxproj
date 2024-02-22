@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A769732C2B87B10700A84F1A /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A769732B2B87B10700A84F1A /* NetworkService.swift */; };
+		A769732E2B87CD4D00A84F1A /* DayFact.swift in Sources */ = {isa = PBXBuildFile; fileRef = A769732D2B87CD4D00A84F1A /* DayFact.swift */; };
 		A7B847A22B851C28000245DC /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B847A12B851C28000245DC /* EventView.swift */; };
 		A7EEE2B82B7E8366004C0E48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EEE2B72B7E8366004C0E48 /* AppDelegate.swift */; };
 		A7EEE2BA2B7E8366004C0E48 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EEE2B92B7E8366004C0E48 /* SceneDelegate.swift */; };
@@ -40,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A769732B2B87B10700A84F1A /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		A769732D2B87CD4D00A84F1A /* DayFact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayFact.swift; sourceTree = "<group>"; };
 		A7B847A12B851C28000245DC /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
 		A7EEE2B42B7E8366004C0E48 /* lesson24project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lesson24project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7EEE2B72B7E8366004C0E48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +91,7 @@
 		A7EEE2AB2B7E8366004C0E48 = {
 			isa = PBXGroup;
 			children = (
+				A769732D2B87CD4D00A84F1A /* DayFact.swift */,
 				A7EEE2B62B7E8366004C0E48 /* lesson24project */,
 				A7EEE2CD2B7E8367004C0E48 /* lesson24projectTests */,
 				A7EEE2D72B7E8367004C0E48 /* lesson24projectUITests */,
@@ -113,6 +118,7 @@
 				A7EEE2E92B7E8971004C0E48 /* EventTableViewCell.swift */,
 				A7EEE2EB2B7E935F004C0E48 /* Timezone.swift */,
 				A7B847A12B851C28000245DC /* EventView.swift */,
+				A769732B2B87B10700A84F1A /* NetworkService.swift */,
 				A7EEE2E72B7E837F004C0E48 /* Event.swift */,
 				A7EEE2BD2B7E8366004C0E48 /* Main.storyboard */,
 				A7EEE2C02B7E8367004C0E48 /* Assets.xcassets */,
@@ -272,7 +278,9 @@
 			files = (
 				A7EEE2EC2B7E935F004C0E48 /* Timezone.swift in Sources */,
 				A7B847A22B851C28000245DC /* EventView.swift in Sources */,
+				A769732C2B87B10700A84F1A /* NetworkService.swift in Sources */,
 				A7EEE2E82B7E837F004C0E48 /* Event.swift in Sources */,
+				A769732E2B87CD4D00A84F1A /* DayFact.swift in Sources */,
 				A7EEE2BC2B7E8366004C0E48 /* ViewController.swift in Sources */,
 				A7EEE2B82B7E8366004C0E48 /* AppDelegate.swift in Sources */,
 				A7EEE2EA2B7E8971004C0E48 /* EventTableViewCell.swift in Sources */,

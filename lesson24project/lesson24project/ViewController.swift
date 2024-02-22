@@ -19,6 +19,8 @@ class ViewController: UIViewController {
         
         static let title = "TODO"
         static let tableViewCellIdentifier = "EventTableViewCell"
+        
+        static let url = "http://numbersapi.com/02/22/date?json"
     }
     
     lazy var tableView: UITableView = {
@@ -31,7 +33,7 @@ class ViewController: UIViewController {
     
     var eventView = EventView(frame: CGRect(x: Constants.eventViewXPosition, y: Constants.eventViewYPosition, width: Constants.eventViewWidth, height: Constants.eventViewHeight))
     
-    let events = [Event(title: "Title", description: "Description", date: "2024/02/20")]
+    var events: Array<Event> = []
     var timeZonesArray: Array<Timezone> = []
     
     override func viewDidLoad() {
@@ -41,6 +43,7 @@ class ViewController: UIViewController {
         
         setupNavigation()
         setupTableView()
+        getFactOfTheDay()
         
     }
     
@@ -70,7 +73,26 @@ class ViewController: UIViewController {
                 timeZonesArray.append(Timezone(name: timeZones, abbr: abbreviation))
             }
         }
-        
+    }
+    
+    func factOfTheDay(message: String) {
+        let alert = UIAlertController(title: "Fact of the Day", message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true)
+    }
+    
+    func getFactOfTheDay() {
+        let localURL = URL(string: Constants.url)
+        NetworkService.get(url: localURL!) { result in
+            switch result {
+            case .success(let data):
+              //  factOfTheDay(message: <#T##String#>)
+                print("Succes. Data: \(data)")
+            case .failure(let error):
+                print("Error: \(error.localizedDescription)")
+            }
+        }
     }
     
     @objc func addButtonTapped() {
@@ -79,12 +101,13 @@ class ViewController: UIViewController {
         //        tableView.reloadData()
         view.addSubview(eventView)
         eventView.backgroundColor = .lightGray
+        eventView.delegate = self
     }
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return timeZonesArray.count
+        return events.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -94,6 +117,15 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return Constants.tableViewHeightForRowAt
+    }
+}
+
+extension ViewController: EventDelegate {
+    func sendEvent(event: Event) {
+        events.append(event)
+        tableView.reloadData()
+        eventView.removeFromSuperview()
+     //   factOfTheDay()
     }
     
     
