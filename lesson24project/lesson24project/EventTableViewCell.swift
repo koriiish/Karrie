@@ -9,6 +9,13 @@ import UIKit
 
 class EventTableViewCell: UITableViewCell {
     
+    enum Constants {
+        static let labelsLeftAnchor: CGFloat = 10
+        static let titleLabelTopAnchor: CGFloat = 5
+        static let descriptionLabelTopAnchor: CGFloat = 10
+        static let dateLabelRightAnchor: CGFloat = -10
+    }
+    
     
     lazy var titleLabel: UILabel = {
         titleLabel = UILabel()
@@ -43,13 +50,13 @@ class EventTableViewCell: UITableViewCell {
         addSubview(dateLabel)
         
         NSLayoutConstraint.activate([
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 5),
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.labelsLeftAnchor),
+            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: Constants.titleLabelTopAnchor),
        
-            descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
+            descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.labelsLeftAnchor),
+            descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: Constants.descriptionLabelTopAnchor),
         
-            dateLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+            dateLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: Constants.dateLabelRightAnchor),
             dateLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
     }

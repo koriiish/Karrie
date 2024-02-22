@@ -87,8 +87,6 @@
 		A7EEE2AB2B7E8366004C0E48 = {
 			isa = PBXGroup;
 			children = (
-				A7B847A12B851C28000245DC /* EventView.swift */,
-				A7EEE2EB2B7E935F004C0E48 /* Timezone.swift */,
 				A7EEE2B62B7E8366004C0E48 /* lesson24project */,
 				A7EEE2CD2B7E8367004C0E48 /* lesson24projectTests */,
 				A7EEE2D72B7E8367004C0E48 /* lesson24projectUITests */,
@@ -113,6 +111,8 @@
 				A7EEE2B92B7E8366004C0E48 /* SceneDelegate.swift */,
 				A7EEE2BB2B7E8366004C0E48 /* ViewController.swift */,
 				A7EEE2E92B7E8971004C0E48 /* EventTableViewCell.swift */,
+				A7EEE2EB2B7E935F004C0E48 /* Timezone.swift */,
+				A7B847A12B851C28000245DC /* EventView.swift */,
 				A7EEE2E72B7E837F004C0E48 /* Event.swift */,
 				A7EEE2BD2B7E8366004C0E48 /* Main.storyboard */,
 				A7EEE2C02B7E8367004C0E48 /* Assets.xcassets */,

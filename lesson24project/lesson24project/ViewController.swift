@@ -11,8 +11,14 @@ class ViewController: UIViewController {
     
     enum Constants {
         static let eventViewXPosition = 20
+        static let eventViewYPosition = 100
+        static let eventViewWidth = 350
+        static let eventViewHeight = 350
+        
+        static let tableViewHeightForRowAt:CGFloat = 100
+        
         static let title = "TODO"
-        //  static let tableViewCell = "EventTableViewCell"
+        static let tableViewCellIdentifier = "EventTableViewCell"
     }
     
     lazy var tableView: UITableView = {
@@ -23,7 +29,7 @@ class ViewController: UIViewController {
         return tableView
     }()
     
-    var eventView = EventView(frame: CGRect(x: Constants.eventViewXPosition, y: 100, width: 350, height: 350))
+    var eventView = EventView(frame: CGRect(x: Constants.eventViewXPosition, y: Constants.eventViewYPosition, width: Constants.eventViewWidth, height: Constants.eventViewHeight))
     
     let events = [Event(title: "Title", description: "Description", date: "2024/02/20")]
     var timeZonesArray: Array<Timezone> = []
@@ -52,7 +58,7 @@ class ViewController: UIViewController {
             tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
             tableView.leftAnchor.constraint(equalTo: view.leftAnchor)
         ])
-        tableView.register(EventTableViewCell.self, forCellReuseIdentifier: "EventTableViewCell")
+        tableView.register(EventTableViewCell.self, forCellReuseIdentifier: Constants.tableViewCellIdentifier)
     }
     
     func getTimeZone(){
@@ -82,12 +88,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "EventTableViewCell", for: indexPath) as! EventTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.tableViewCellIdentifier, for: indexPath) as! EventTableViewCell
         cell.configure(event: events[indexPath.row])
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return Constants.tableViewHeightForRowAt
     }
     
     
